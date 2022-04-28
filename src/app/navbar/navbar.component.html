@@ -1,9 +1,59 @@
-<p>navbar works!</p>
+<div class="grid grid-cols-3">
+    <div class="col-span-1">
+       <span class="text-3xl font-bold">
+        Sneakify
+       </span>
+    </div>
+
+    <div class="grid col-span-2 grid-cols-5 justify-end mt-[5px]">
+        <div class="grid">
+            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                Home
+            </a>
+        </div>
+        <div class="grid">
+            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                Popular
+            </a>
+        </div>
+        <div class="grid">
+            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                Cart
+            </a>
+        </div>
+        <div class="grid">
+            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                Login
+            </a>
+        </div>
+        <div class="grid">
+            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                Signup
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <p>navbar works!</p>
 <p>{{item.name}}</p>
 <p>{{name}}</p>
 
 <input placeholder="name" [(ngModel)]="item.name" name="item" >
+<ul>
+    <li *ngFor="let pro of names">
+        <button (click)="getItem(pro)">
+            {{pro.name}}
+        </button>
+    </li>
+</ul>
 
-<button (click)="getSneakers">
-    get sneakers
-</button>
+<h3 class="">
+    {{selectedItem?.price}}
+</h3> -->
