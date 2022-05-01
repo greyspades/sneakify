@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { faker } from '@faker-js/faker';
 import { IntroComponent } from './intro/intro.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { IntroComponent } from './intro/intro.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     //faker
   ],
   providers: [],
