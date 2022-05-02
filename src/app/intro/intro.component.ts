@@ -18,15 +18,16 @@ export class IntroComponent implements OnInit {
   
   getSneakers():void{
     this.sneakers.getSneakers()
-    .subscribe((item)=>this.sneaks=item.response)
+    .subscribe((item)=>this.sneaks=item.results)
   }
+  
 
-  logdata(message:string):void{
-    console.log(message)
+  logData(message?:string):void{
+    console.log(this.sneaks)
   }
 
   ngOnInit(): void {
-    // this.getSneakers
+    //  this.getSneakers()
   }
 
 }

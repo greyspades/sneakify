@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { faker } from '@faker-js/faker';
 import { IntroComponent } from './intro/intro.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { PopularComponent } from './popular/popular.component';
+import { TopBrandsComponent } from './top-brands/top-brands.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    IntroComponent
+    IntroComponent,
+    PopularComponent,
+    TopBrandsComponent
   ],
   imports: [
     BrowserModule,

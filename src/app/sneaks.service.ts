@@ -40,7 +40,7 @@ export class SneaksService {
   //  console.log(res)
     return this.http.get<any>('http://localhost:8000/sneaks/get_sneakers/')
     .pipe(
-      //tap((data)=>console.log('go')),
+      //tap((data)=>console.log(data)),
       catchError(this.handleError<any>('getSneakers', []))
     )
   }
