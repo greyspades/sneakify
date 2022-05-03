@@ -8,7 +8,12 @@ import { faker } from '@faker-js/faker';
 import { IntroComponent } from './intro/intro.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PopularComponent } from './popular/popular.component';
-import { TopBrandsComponent } from './top-brands/top-brands.component'
+import { TopBrandsComponent } from './top-brands/top-brands.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatList,MatListItem,} from '@angular/material/list';
+import {MatButton,} from '@angular/material/button'
+import {MatGridListModule} from '@angular/material/grid-list'; 
+
 
 @NgModule({
   declarations: [
@@ -16,13 +21,17 @@ import { TopBrandsComponent } from './top-brands/top-brands.component'
     NavbarComponent,
     IntroComponent,
     PopularComponent,
-    TopBrandsComponent
+    TopBrandsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule
+    
     //faker
   ],
   providers: [],

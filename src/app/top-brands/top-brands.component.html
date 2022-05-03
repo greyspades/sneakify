@@ -1,15 +1,22 @@
 <div class="grid justify-center w-[100%]">
-    <div class="grid bg-[#D3D3D3] border-3xl h-[350px] md:w-[1400px]">
-        <ul class="grid grid-cols-4" >
-            <li>
-                <div class="grid bg-[#0C0F25] h-[316px] w-[150px] border-4-[#D0D314]">
-                    <p>
+        <h3 class="text-3xl font-bold text-center mt-[40px] text-white">
+            Top Brands
+        </h3>
 
-                    </p>
-                </div>
-            </li>
-        </ul>
-       
+    <div class=" md:mt-[40px] h-[200px] md:w-[1200px]">
+        <mat-grid-list class="" cols="12"  >
+            <mat-grid-tile class="h-[80px] w-[80px]" *ngFor="let brand of brands">
+                
+                <button class="w-[70px] h-[70px]" (click)="logData(brand.name)">
+                    <img class="h-[80px] w-[80px]" src={{brand.url}}  >
+                   </button>
+        
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list></mat-grid-list>
+       <button>
+           click
+       </button>
     </div>
 
 </div>

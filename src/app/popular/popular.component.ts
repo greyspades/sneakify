@@ -24,7 +24,7 @@ export class PopularComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.getSneakers()
+    //this.getSneakers()
   }
 
 }

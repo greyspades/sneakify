@@ -1,0 +1,5 @@
+.top-row{
+    display: grid;
+    grid-template-columns: 70px 1fr 1fr 1fr;
+    
+}
