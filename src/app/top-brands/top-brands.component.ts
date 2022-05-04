@@ -63,46 +63,46 @@ export class TopBrandsComponent implements OnInit {
       name:'Kappa',
       url:'../../assets/images/Kappa.png',
     },
-    {
-      name:'New-Balance',
-      url:'../../assets/images/New-Balance.png',
-    },
-    {
-      name:'Timberland',
-      url:'../../assets/images/Timberland.png',
-    },
-    {
-      name:'Skechers',
-      url:'../../assets/images/Skechers.png',
-    },
-    {
-      name:'',
-      url:'../../assets/images/Merrell.png',
-    },
-    {
-      name:'Ufoos',
-      url:'../../assets/images/Oofos.png',
-    },
-    {
-      name:'Umbro',
-      url:'../../assets/images/Umbro.png',
-    },
-    {
-      name:'Ugg',
-      url:'../../assets/images/Ugg.png',
-    },
-    {
-      name:'Toms',
-      url:'../../assets/images/Toms.png',
-    },
-    {
-      name:'Umbro',
-      url:'../../assets/images/Umbro.png',
-    },
-    {
-      name:'Saucony',
-      url:'../../assets/images/Saucony.png',
-    }
+    // {
+    //   name:'New-Balance',
+    //   url:'../../assets/images/New-Balance.png',
+    // },
+    // {
+    //   name:'Timberland',
+    //   url:'../../assets/images/Timberland.png',
+    // },
+    // {
+    //   name:'Skechers',
+    //   url:'../../assets/images/Skechers.png',
+    // },
+    // {
+    //   name:'',
+    //   url:'../../assets/images/Merrell.png',
+    // },
+    // {
+    //   name:'Ufoos',
+    //   url:'../../assets/images/Oofos.png',
+    // },
+    // {
+    //   name:'Umbro',
+    //   url:'../../assets/images/Umbro.png',
+    // },
+    // {
+    //   name:'Ugg',
+    //   url:'../../assets/images/Ugg.png',
+    // },
+    // {
+    //   name:'Toms',
+    //   url:'../../assets/images/Toms.png',
+    // },
+    // {
+    //   name:'Umbro',
+    //   url:'../../assets/images/Umbro.png',
+    // },
+    // {
+    //   name:'Saucony',
+    //   url:'../../assets/images/Saucony.png',
+    // }
 
   ]
 

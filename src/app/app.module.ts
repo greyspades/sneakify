@@ -12,7 +12,11 @@ import { TopBrandsComponent } from './top-brands/top-brands.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatList,MatListItem,} from '@angular/material/list';
 import {MatButton,} from '@angular/material/button'
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatGridListModule} from '@angular/material/grid-list';
+import { SneaksCardComponent } from './sneaks-card/sneaks-card.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider'; 
+
 
 
 @NgModule({
@@ -22,6 +26,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     IntroComponent,
     PopularComponent,
     TopBrandsComponent,
+    SneaksCardComponent,
     
   ],
   imports: [
@@ -30,7 +35,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    MatDividerModule,
     
     //faker
   ],

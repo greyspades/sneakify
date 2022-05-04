@@ -1,0 +1,54 @@
+<div class="grid shadow-2xl grid-rows-2 bg-[#0C0F25] h-[316px] rounded-3xl m-[30px] w-[250px] ">
+    <div>
+        <img class="rounded-t-3xl border-2 border-[#0C0F25]" src={{data.media.smallImageUrl}} >
+    </div>
+    <div class="grid grid-rows-4 p-4 mt-2 relative"> 
+        <div class="truncate ...">
+            <span class="text-[#D0D314]">
+                Name:
+            </span>
+            <span class="text-white text-clip overflow-hidden ...">
+                {{data.name}}
+            </span>
+        </div>
+        <mat-divider class="bg-[#D0D314] h-0.5 rounded-full "></mat-divider>
+        <div class="text-white text-clip truncate ">
+            <span class="text-[#D0D314]">
+                Brand:
+            </span>
+            <span>
+                {{data.brand}}
+            </span>
+        </div>
+        <mat-divider class="bg-[#D0D314] h-0.5 rounded-full"></mat-divider>
+        <div class="text-white">
+          <!-- <span *ngIf="data.gender=='men'">
+              <mat-icon color="#D0D314" >male</mat-icon>
+          </span>
+          <span *ngIf="data.gender=='women'">
+            <mat-icon color="#D0D314">male</mat-icon>
+        </span>
+        <span *ngIf="data.gender=='women'">
+            <mat-icon color="#D0D314">male</mat-icon>
+        </span> -->
+        
+        <span class="text-[#D0D314]">
+            {{data.gender}}
+        </span>
+        <span class="ml-4">
+            <span class="text-[#D0D314] font-bold">
+                $
+            </span>
+            <span class="font-bold">
+                {{data.retailPrice}}
+            </span>
+        </span>
+
+        <button class="md:h-[35px] md:w-[70px] rounded-xl md:ml-auto bg-[#D3D3D3] absolute right-3 bottom-3">
+            <mat-icon class="text-black" color="#D0D314" >add_shopping_cart</mat-icon>
+        </button>
+        
+        </div>
+    </div>
+
+</div>
