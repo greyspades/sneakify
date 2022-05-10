@@ -5,7 +5,7 @@
        </span>
     </div>
 
-    <div class="grid col-span-2 grid-cols-5 justify-end mt-[5px]">
+    <div *ngIf="platform=='desktop'" class="grid col-span-2 grid-cols-5 justify-end mt-[5px]">
         <div class="grid">
             <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
                 Home
@@ -32,6 +32,15 @@
             </a>
         </div>
     </div>
+
+    <div *ngIf="platform=='mobile'" class="grid justify-end ml-[230px]">
+        <button>
+            <mat-icon class="text-white w-[40px] h-[40px]">
+                menu
+            </mat-icon>
+        </button>
+    </div>
+
 </div>
 
 

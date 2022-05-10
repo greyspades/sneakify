@@ -1,8 +1,8 @@
-<div class="grid shadow-2xl grid-rows-2 bg-[#0C0F25] h-[316px] rounded-3xl m-[30px] w-[250px] ">
+<div class="grid shadow-2xl grid-rows-2 bg-[#0C0F25] md:h-[316px] md:rounded-3xl rounded-md md:m-[30px]  md:w-[250px] h-[240px] m-1 ">
     <div>
-        <img class="rounded-t-3xl border-2 border-[#0C0F25]" src={{data.media.smallImageUrl}} >
+        <img class="md:rounded-t-3xl rounded-md border-2 border-[#0C0F25]" src={{data.media.smallImageUrl}} >
     </div>
-    <div class="grid grid-rows-4 p-4 mt-2 relative"> 
+    <div class="grid grid-rows-4 md:p-4 p-2 md:mt-2 relative"> 
         <div class="truncate ...">
             <span class="text-[#D0D314]">
                 Name:
@@ -12,30 +12,21 @@
             </span>
         </div>
         <mat-divider class="bg-[#D0D314] h-0.5 rounded-full "></mat-divider>
-        <div class="text-white text-clip truncate ">
+        <div class="text-white text-clip truncate mt-[-20px] md:mt-0 ">
             <span class="text-[#D0D314]">
                 Brand:
             </span>
             <span>
                 {{data.brand}}
             </span>
+            <mat-divider class="bg-[#D0D314] h-0.5 rounded-full"></mat-divider>
         </div>
-        <mat-divider class="bg-[#D0D314] h-0.5 rounded-full"></mat-divider>
-        <div class="text-white">
-          <!-- <span *ngIf="data.gender=='men'">
-              <mat-icon color="#D0D314" >male</mat-icon>
-          </span>
-          <span *ngIf="data.gender=='women'">
-            <mat-icon color="#D0D314">male</mat-icon>
-        </span>
-        <span *ngIf="data.gender=='women'">
-            <mat-icon color="#D0D314">male</mat-icon>
-        </span> -->
         
+        <div class="text-white  mt-[-10px] mb md:mt-0">
         <span class="text-[#D0D314]">
             {{data.gender}}
         </span>
-        <span class="ml-4">
+        <span class="ml-1 md:ml-4">
             <span class="text-[#D0D314] font-bold">
                 $
             </span>
@@ -44,8 +35,8 @@
             </span>
         </span>
 
-        <button class="md:h-[35px] md:w-[70px] rounded-xl md:ml-auto bg-[#D3D3D3] absolute right-3 bottom-3">
-            <mat-icon class="text-black" color="#D0D314" >add_shopping_cart</mat-icon>
+        <button class="md:h-[35px] md:w-[70px] w-[50px] h-[30px] rounded-xl md:ml-auto bg-[#D3D3D3] absolute md:right-3 right-1 bottom-4 md:bottom-3">
+            <mat-icon class="text-black text-center" color="#D0D314" >add_shopping_cart</mat-icon>
         </button>
         
         </div>
