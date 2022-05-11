@@ -1,22 +1,28 @@
-<div class="grid justify-center w-[100%]">
+<div class="grid justify-center w-[100%] md:mb-0 mb-[100px]">
         <h3 class="text-3xl font-bold text-center mt-[40px] text-white">
             Top Brands
         </h3>
+        <p class="text-xl font-medium text-center mb-4 text-white">
+            Our top brands
+        </p>
+        <button ondblclick="">
 
-    <div class=" md:mt-[40px] h-[200px] md:w-[1200px]">
-        <mat-grid-list class="" cols="12"  >
+        </button>
+
+    <div class=" md:mt-[40px] w-[350px] h-[200px] md:w-[1200px]">
+        <mat-grid-list class="" cols={{columns}}   >
             <mat-grid-tile class="h-[80px] w-[80px]" *ngFor="let brand of brands">
                 
                 <button class="w-[70px] h-[70px]" (click)="logData(brand.name)">
-                    <img class="h-[80px] w-[80px]" src={{brand.url}}  >
+                    <img class="h-[80px] w-[80px] rounded-md" src={{brand.url}}  >
                    </button>
         
             </mat-grid-tile>
         </mat-grid-list>
-        <mat-grid-list></mat-grid-list>
-       <button>
+        
+       <!-- <button>
            click
-       </button>
+       </button> -->
     </div>
 
 </div>
