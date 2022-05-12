@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.drawer-container {
+    width: 100%;
+    height: 550px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .drawer-content {
+    display: flex;
+    height: 100%;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  @media all and (min-width:800px){
+    .drawer-container {
+      width: 1300px;
+      height: 550px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+    
+    .drawer-content {
+      display: flex;
+      height: 100%;
+      width: 150px;
+      align-items: center;
+      justify-content: center;
+    }
+  }

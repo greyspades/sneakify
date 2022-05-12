@@ -1,48 +1,88 @@
-<div class="grid grid-cols-3">
-    <div class="col-span-1">
-       <span class="text-3xl font-bold">
-        Sneakify
-       </span>
-    </div>
+<div class="">
 
-    <div *ngIf="platform=='desktop'" class="grid col-span-2 grid-cols-5 justify-end mt-[5px]">
-        <div class="grid">
-            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-                Home
-            </a>
-        </div>
-        <div class="grid">
-            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-                Popular
-            </a>
-        </div>
-        <div class="grid">
-            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-                Cart
-            </a>
-        </div>
-        <div class="grid">
-            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-                Login
-            </a>
-        </div>
-        <div class="grid">
-            <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-                Signup
-            </a>
-        </div>
+    <div class="md:grid md:grid-cols-3 relative  z-60 ">
+        <!-- <div *ngIf="platform=='desktop'" class="col-span-1">
+           <span class="text-3xl font-bold">
+            Sneakify
+           </span>
+        </div> -->
+    
+        <!-- <div *ngIf="platform=='desktop'" class="col-span-2 justify-end md:mt-[-60px]">
+            <mat-grid-list cols="5">
+                <mat-grid-tile class="grid">
+                    <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                        Home
+                    </a>
+                </mat-grid-tile>
+                <mat-grid-tile class="grid">
+                    <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                        Popular
+                    </a>
+                </mat-grid-tile>
+                <mat-grid-tile class="grid">
+                    <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                        Cart
+                    </a>
+                </mat-grid-tile>
+                <mat-grid-tile class="grid">
+                    <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                        Login
+                    </a>
+                </mat-grid-tile>
+                <mat-grid-tile class="grid">
+                    <a href="#" class="h-[30px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+                        Signup
+                    </a>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div> -->
+        
+    
+        <mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
+            <div *ngIf="platform=='mobile'" class="grid justify-end shadow-2xl">
+                <button class="mr-6" (click)="this.toggleDrawer()">
+                    <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
+                        menu
+                    </mat-icon>
+                </button>
+            </div>
+            <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
+                <div class="grid m-6">
+                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                        Home
+                    </a>
+                </div>
+                <div class="grid m-6">
+                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                        Popular
+                    </a>
+                </div>
+                <div class="grid m-6">
+                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                        Cart
+                    </a>
+                </div>
+                <div class="grid m-6">
+                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                        Login
+                    </a>
+                </div>
+                <div class="grid m-6">
+                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                        Signup
+                    </a>
+                </div>
+            </mat-drawer>
+            <div class="drawer-co">
+                <app-intro></app-intro>
+            </div>
+    
+        </mat-drawer-container>
     </div>
-
-    <div *ngIf="platform=='mobile'" class="grid justify-end ml-[230px]">
-        <button>
-            <mat-icon class="text-white w-[40px] h-[40px]">
-                menu
-            </mat-icon>
-        </button>
+    <div *ngIf="platform=='desktop'" class=" relative">
+        <app-intro></app-intro>
     </div>
-
 </div>
-
 
 
 

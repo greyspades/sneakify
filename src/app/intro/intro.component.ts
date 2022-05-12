@@ -26,8 +26,16 @@ export class IntroComponent implements OnInit {
     console.log(this.sneaks)
   }
 
+  platform?:string
+
   ngOnInit(): void {
-    //  this.getSneakers()
+    let width=window.innerWidth
+    if(width<500){
+      this.platform='mobile'
+    }
+    else{
+      this.platform='desktop'
+    }
   }
 
 }

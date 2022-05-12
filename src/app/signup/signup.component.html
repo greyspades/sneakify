@@ -1,0 +1,59 @@
+<p>signup works!</p>
+<div class="grid justify-center">
+    <div class="bg-[#D3D3D3] grid w-[300px] p-4 h-[500px] rounded-lg">
+        <div class="text-2xl font-bold text-center">
+            Signup
+        </div>
+
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="grid justify-center mt-[-170px]">
+            <div class=" mt-[-20px]  justify-center">
+                <input
+                id="name"
+                placeholder="Name"
+                class="h-[50px] rounded-full p-3 w-[250px]"
+                formControlName="name"
+                type="text"
+                >
+            </div>
+
+            <div class=" mt-[-20px] justify-center">
+                <input
+                id="mail"
+                placeholder="Email"
+                class="h-[50px] rounded-full p-3 w-[250px]"
+                formControlName="mail"
+                type="email"
+                >
+            </div>
+
+            <div class=" mt-[-20px] justify-center">
+                <input
+                id="password"
+                placeholder="Password"
+                class="h-[50px] rounded-full p-3 w-[250px]"
+                formControlName="password"
+                type={{passwordType}}
+                >
+            </div>
+
+            <div class=" grid mt-[-70px] justify-center">
+                <button (click)="togglePassword" *ngIf="passwordType=='text'">
+                    <mat-icon class="text-black text-center" color="#D0D314" >visibility</mat-icon>
+                </button>
+
+                <button (click)="togglePassword" *ngIf="passwordType=='password'">
+                    <mat-icon class="text-black text-center" color="#D0D314" >visibility_off</mat-icon>
+                </button>
+                
+            </div>
+
+            <div class="grid justify-center">
+                <button class="bg-[#D0D314] h-[40px] rounded-full w-[100px]" type="submit">
+                    Submit
+                </button>
+            </div>
+        
+        </form>
+        
+    </div>
+</div>

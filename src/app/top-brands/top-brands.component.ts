@@ -12,7 +12,16 @@ export class TopBrandsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let width=window.innerWidth
+    if(width<400){
+      this.columns="4"
+    }
+    else {
+      this.columns="12"
+    }
   }
+
+  columns?:string
   
   brands:Brands[]=[
     {

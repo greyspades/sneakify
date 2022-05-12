@@ -27,17 +27,22 @@ export class SneaksService {
     };
   }
 
+  headers = {'Content-type': 'application/json','Accept': 'text/plain'}
+
+  addUser(data:any):Observable<any>{
+    console.log(data)
+    return this.http.post<any>('http://localhost:8000/sneaks/add_user/',data)
+    .pipe(
+      // tap((res)=>console.log(res))
+      catchError(this.handleError<any>('getSneakers', []))
+    )
+  }
+
   
 
   getSneakers():Observable<any>{
 
-  //  const res=this.http.get<any[]>('http://localhost:8000/sneaks/get_sneakers/')
-    
-  //  const res= this.http.get<any>('http://localhost:8000/sneaks/get_sneakers/')
-  //  .pipe(
-  //   catchError(this.handleError<any>('getHeroes', []))
-  //  )
-  //  console.log(res)
+  
     return this.http.get<any>('http://localhost:8000/sneaks/get_sneakers/')
     .pipe(
       //tap((data)=>console.log(data)),

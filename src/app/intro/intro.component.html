@@ -1,29 +1,44 @@
-<div class="intro md:h-[600px] h-[600px]">
-    <div>
+
+
+<div class="intro md:h-[600px] h-[500px]">
+    <!-- <div>
         <app-navbar></app-navbar>
-    </div>
-
-<div class="grid grid-rows-4 md:grid-cols-3 relative md:p-6">
-    <!-- <div class="md:text-[170px] text-[40px] sm:ml-5 sm:text-center  text-[#D3D3D3] font-extrabold">
-        Sneakify
-      </div>
-    <div class="grid md:col-span-2 md:mt-[-100px] md:mr-[-100px] ">
-        <img src="../../assets/images/shoe2.png" >
-    </div>
-    <div class="md:mt-[-200px] md:ml-[150px] md:relative ">
-        <button class="w-[150px] h-[80px] bg-[#D3D3D3] rounded-full" (click)="logData()">
-            Shop now
-        </button>
     </div> -->
-    <div class="md:text-[170px] text-[40px] ml-5 sm:text-center  text-[#D3D3D3] font-extrabold">
+  <mat-toolbar *ngIf="platform=='desktop'" class="toolbar relative z-50">
+
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Home
+        </a>
+    
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Login
+        </a>
+
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Signup
+        </a>
+        
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Popular
+        </a>
+
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Cart
+        </a>
+    
+  </mat-toolbar>
+
+<div class="md:grid grid-rows-4 md:grid-cols-3 md:h-[500px] z-0 relative md:mt-[-10px] md:p-6">
+    
+    <div class="md:text-[170px] text-[40px] ml-3 sm:text-center  text-[#D3D3D3] font-extrabold">
         Sneakify
       </div>
 
-      <div class="grid mt-[-170px] md:col-span-2 md:mt-[-100px] md:mr-[-100px] ">
+      <div class="grid mt-[-70px] md:col-span-2 md:mt-[-160px] md:mr-[-100px] relative z-0">
         <img src="../../assets/images/shoe2.png" >
     </div>
 
-    <div class="md:mt-[-400px] md:ml-[150px] md:relative mt-[-20px] grid justify-center ">
+    <div class="md:mt-[150px] md:ml-[150px] md:relative md:mb-0 mb-[-150px] grid justify-center ">
         <button class="w-[150px] h-[80px] bg-[#D3D3D3] rounded-full" (click)="logData()">
             Shop now
         </button>

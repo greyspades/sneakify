@@ -20,8 +20,20 @@ export class NavbarComponent implements OnInit {
     else{
       this.platform='desktop'
     }
-  } 
+  }
+
+  drawerOpened:boolean=false
   
+  toggleDrawer():void{
+    if(this.drawerOpened){
+      this.drawerOpened=false
+    }
+    else if(!this.drawerOpened){
+      this.drawerOpened=true
+    }
+  }
+
+
   item:Item= {
     name:'airwalks',
     id:1,
