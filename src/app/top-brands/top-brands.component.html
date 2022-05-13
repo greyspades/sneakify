@@ -13,9 +13,9 @@
         <mat-grid-list class="" cols={{columns}}   >
             <mat-grid-tile class="h-[80px] w-[80px]" *ngFor="let brand of brands">
                 
-                <button class="w-[70px] h-[70px]" (click)="logData(brand.name)">
+                   <a href="#" routerLink="/brand/{{brand.name}}"  class="w-[70px] h-[70px]">
                     <img class="h-[80px] w-[80px] rounded-md" src={{brand.url}}  >
-                   </button>
+                   </a>
         
             </mat-grid-tile>
         </mat-grid-list>

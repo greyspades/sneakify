@@ -23,6 +23,13 @@ import { AppbarComponent } from './appbar/appbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component'; 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrandComponent } from './brand/brand.component';
+import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 
 
@@ -38,6 +45,8 @@ import { SignupComponent } from './signup/signup.component';
     AppbarComponent,
     LoginComponent,
     SignupComponent,
+    DashboardComponent,
+    BrandComponent,
     
   ],
   imports: [
@@ -52,7 +61,12 @@ import { SignupComponent } from './signup/signup.component';
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatMenuModule,
+    LayoutModule,
+    MatPaginatorModule,
     
     //faker
   ],

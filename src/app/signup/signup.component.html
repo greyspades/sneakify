@@ -1,59 +1,194 @@
-<p>signup works!</p>
-<div class="grid justify-center">
-    <div class="bg-[#D3D3D3] grid w-[300px] p-4 h-[500px] rounded-lg">
-        <div class="text-2xl font-bold text-center">
-            Signup
+<mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
+    <div *ngIf="platform=='mobile'" class="grid justify-end shadow-2xl">
+        <button class="mr-6" (click)="this.toggleDrawer()">
+            <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
+                menu
+            </mat-icon>
+        </button>
+    </div>
+    <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
+        <div class="grid m-6">
+            <a routerLink=""href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Home
+            </a>
         </div>
-
-        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="grid justify-center mt-[-170px]">
-            <div class=" mt-[-20px]  justify-center">
-                <input
-                id="name"
-                placeholder="Name"
-                class="h-[50px] rounded-full p-3 w-[250px]"
-                formControlName="name"
-                type="text"
-                >
-            </div>
-
-            <div class=" mt-[-20px] justify-center">
-                <input
-                id="mail"
-                placeholder="Email"
-                class="h-[50px] rounded-full p-3 w-[250px]"
-                formControlName="mail"
-                type="email"
-                >
-            </div>
-
-            <div class=" mt-[-20px] justify-center">
-                <input
-                id="password"
-                placeholder="Password"
-                class="h-[50px] rounded-full p-3 w-[250px]"
-                formControlName="password"
-                type={{passwordType}}
-                >
-            </div>
-
-            <div class=" grid mt-[-70px] justify-center">
-                <button (click)="togglePassword" *ngIf="passwordType=='text'">
-                    <mat-icon class="text-black text-center" color="#D0D314" >visibility</mat-icon>
-                </button>
-
-                <button (click)="togglePassword" *ngIf="passwordType=='password'">
-                    <mat-icon class="text-black text-center" color="#D0D314" >visibility_off</mat-icon>
-                </button>
+        <div class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Popular
+            </a>
+        </div>
+        <div class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Cart
+            </a>
+        </div>
+        <div class="grid m-6">
+            <a routerLink="/login" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Login
+            </a>
+        </div>
+        <div routerLink="/signup" class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Signup
+            </a>
+        </div>
+    </mat-drawer>
+    <div class="drawer-co">
+        <div class="grid justify-center mt-[60px]">
+        
+            <div class="bg-[#D3D3D3] grid w-[300px] p-4 h-[500px] rounded-lg">
+                <div class="text-2xl font-bold text-center">
+                    Signup
+                </div>
+        
+                <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="grid justify-center mt-[-170px]">
+                    <div class=" mt-[-20px]  justify-center">
+                        <input
+                        id="name"
+                        placeholder="Name"
+                        class="h-[50px] rounded-full p-3 w-[250px]"
+                        formControlName="name"
+                        type="text"
+                        >
+                    </div>
+        
+                    <div class=" mt-[-20px] justify-center">
+                        <input
+                        id="mail"
+                        placeholder="Email"
+                        class="h-[50px] rounded-full p-3 w-[250px]"
+                        formControlName="mail"
+                        type="email"
+                        >
+                    </div>
+        
+                    <div class=" mt-[-20px] justify-center">
+                        <input
+                        id="password"
+                        placeholder="Password"
+                        class="h-[50px] rounded-full p-3 w-[250px]"
+                        formControlName="password"
+                        type={{passwordType}}
+                        >
+                    </div>
+        
+                    <div class=" grid mt-[-70px] justify-center">
+                        <button (click)="togglePassword()" *ngIf="passwordType=='text'">
+                            <mat-icon class="text-black text-center" color="#D0D314" >visibility</mat-icon>
+                        </button>
+        
+                        <button (click)="togglePassword()" *ngIf="passwordType=='password'">
+                            <mat-icon class="text-black text-center" color="#D0D314" >visibility_off</mat-icon>
+                        </button>
+                        
+                    </div>
+        
+                    <div class="grid justify-center">
+                        <button *ngIf="loading==false" class="bg-[#D0D314] h-[40px] rounded-full w-[100px]" type="submit">
+                            Submit
+                        </button>
+        
+                        <mat-spinner *ngIf="loading==true" diameter="50" color="#D0D314" class="text-#D0D314" >
+        
+                        </mat-spinner>
+                    </div>
+                
+                </form>
                 
             </div>
+        </div>
+    </div>
 
-            <div class="grid justify-center">
-                <button class="bg-[#D0D314] h-[40px] rounded-full w-[100px]" type="submit">
-                    Submit
-                </button>
+</mat-drawer-container>
+
+
+
+
+<div *ngIf="platform=='desktop'">
+    <mat-toolbar  class="toolbar relative z-50">
+
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Home
+        </a>
+    
+        <a routerLink="/login" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Login
+        </a>
+    
+        <a routerLink="/signup"href="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Signup
+        </a>
+        
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Popular
+        </a>
+    
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Cart
+        </a>
+    
+    </mat-toolbar>
+    <div class="grid justify-center mt-[60px]">
+        
+        <div class="bg-[#D3D3D3] grid w-[300px] p-4 h-[500px] rounded-lg">
+            <div class="text-2xl font-bold text-center">
+                Signup
             </div>
-        
-        </form>
-        
+    
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="grid justify-center mt-[-170px]">
+                <div class=" mt-[-20px]  justify-center">
+                    <input
+                    id="name"
+                    placeholder="Name"
+                    class="h-[50px] rounded-full p-3 w-[250px]"
+                    formControlName="name"
+                    type="text"
+                    >
+                </div>
+    
+                <div class=" mt-[-20px] justify-center">
+                    <input
+                    id="mail"
+                    placeholder="Email"
+                    class="h-[50px] rounded-full p-3 w-[250px]"
+                    formControlName="mail"
+                    type="email"
+                    >
+                </div>
+    
+                <div class=" mt-[-20px] justify-center">
+                    <input
+                    id="password"
+                    placeholder="Password"
+                    class="h-[50px] rounded-full p-3 w-[250px]"
+                    formControlName="password"
+                    type={{passwordType}}
+                    >
+                </div>
+    
+                <div class=" grid mt-[-70px] justify-center">
+                    <button (click)="togglePassword()" *ngIf="passwordType=='text'">
+                        <mat-icon class="text-black text-center" color="#D0D314" >visibility</mat-icon>
+                    </button>
+    
+                    <button (click)="togglePassword()" *ngIf="passwordType=='password'">
+                        <mat-icon class="text-black text-center" color="#D0D314" >visibility_off</mat-icon>
+                    </button>
+                    
+                </div>
+    
+                <div class="grid justify-center">
+                    <button *ngIf="loading==false" class="bg-[#D0D314] h-[40px] rounded-full w-[100px]" type="submit">
+                        Submit
+                    </button>
+    
+                    <mat-spinner *ngIf="loading==true" diameter="50" color="#D0D314" class="text-#D0D314" >
+    
+                    </mat-spinner>
+                </div>
+            
+            </form>
+            
+        </div>
     </div>
 </div>

@@ -1,0 +1,124 @@
+<mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
+    <div *ngIf="platform=='mobile'" class="grid justify-end shadow-2xl">
+        <button class="mr-6" (click)="this.toggleDrawer()">
+            <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
+                menu
+            </mat-icon>
+        </button>
+    </div>
+    <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
+        <div class="grid m-6">
+            <a routerLink=""href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Home
+            </a>
+        </div>
+        <div class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Popular
+            </a>
+        </div>
+        <div class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Cart
+            </a>
+        </div>
+        <div class="grid m-6">
+            <a routerLink="/login" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Login
+            </a>
+        </div>
+        <div routerLink="/signup" class="grid m-6">
+            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                Signup
+            </a>
+        </div>
+    </mat-drawer>
+    <div class="drawer-co">
+        <div class="grid justify-center w-[100%]">
+            <h3 class="text-3xl font-bold text-center mt-[40px] mb-1 text-white">
+                Top {{brand}}`s
+            </h3>
+            <p class="text-xl font-medium text-center mb-4 text-white">
+                Our best selling items
+            </p>
+            <div class="grid justify-center rounded-2xl bg-[#D3D3D3] popula p-1 md:p-7 border-3xl md:w-[1300px]">
+                <ul class="grid justify-center grid-cols-2 md:grid-cols-4" >
+                    <li *ngFor="let sneaks of sneakers">
+                        <app-sneaks-card [data]="sneaks">
+        
+                        </app-sneaks-card>
+                    </li>
+                </ul>
+               
+            </div>
+        
+        </div>
+    </div>
+
+</mat-drawer-container>
+
+<div *ngIf="platform=='desktop'">
+    <mat-toolbar  class="toolbar relative z-50">
+
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Home
+        </a>
+    
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Login
+        </a>
+    
+        <a href="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Signup
+        </a>
+        
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Popular
+        </a>
+    
+        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+            Cart
+        </a>
+    
+    </mat-toolbar>
+    <div class="grid justify-center w-[100%]">
+        <h3 class="text-3xl font-bold text-center mt-[40px] mb-1 text-white">
+            Top {{brand}}`s
+        </h3>
+        <p class="text-xl font-medium text-center mb-4 text-white">
+            Our best selling items
+        </p>
+        <div class="grid justify-center rounded-2xl bg-[#D3D3D3] popula p-1 md:p-7 border-3xl md:w-[1300px]">
+            <ul class="grid justify-center grid-cols-2 md:grid-cols-4" >
+                <li *ngFor="let sneaks of sneakers">
+                    <app-sneaks-card [data]="sneaks">
+    
+                    </app-sneaks-card>
+                </li>
+            </ul>
+           
+        </div>
+    
+    </div>
+
+    <div class="bg-[#D0D314] text-xl font-bold h-[60px] grid justify-end ml-auto">
+        <div class="grid grid-cols-12">
+            <button (click)="prevPage()" class="bg-[#D3D3D3] h-[50px] w-[80px] rounded-full">
+                <mat-icon class="text-3xl ">
+                    navigate_before
+                </mat-icon>
+            </button>
+            <p class="text-xl font-bold text-center">
+                page:{{page}}
+            </p>
+            <button (click)="nextPage()" class=" bg-[#D3D3D3] h-[50px] w-[80px] rounded-full">
+                <mat-icon class="text-3xl">
+                    navigate_next
+                </mat-icon>
+            </button>
+
+        </div>
+    </div>
+
+    
+</div>
