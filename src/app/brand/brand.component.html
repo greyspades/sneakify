@@ -1,14 +1,25 @@
 <mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
-    <div *ngIf="platform=='mobile'" class="grid justify-end shadow-2xl">
-        <button class="mr-6" (click)="this.toggleDrawer()">
-            <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
-                menu
+    
+    <div *ngIf="platform=='mobile'" class="grid justify-end grid-cols-2 shadow-2xl">
+        <span class="md:ml-[350px]" >
+            <mat-icon color="" class="text-[#D0D314] m-4 text-[40px] font-bold">
+                shoping_cart
             </mat-icon>
-        </button>
+            <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
+                {{cart.cart.length}}
+            </span>
+        </span>
+        <div class="grid justify-end">
+            <button class="mr-6" (click)="this.toggleDrawer()">
+                <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
+                    menu
+                </mat-icon>
+            </button>
+        </div>
     </div>
     <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
         <div class="grid m-6">
-            <a routerLink=""href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+            <a routerLink="" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
                 Home
             </a>
         </div>
@@ -28,7 +39,7 @@
             </a>
         </div>
         <div routerLink="/signup" class="grid m-6">
-            <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+            <a routerLink="/signup" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
                 Signup
             </a>
         </div>
@@ -53,6 +64,25 @@
             </div>
         
         </div>
+        <div class="bg-[#D0D314] text-xl font-bold h-[60px] grid justify-end ml-auto">
+            <div class="grid grid-cols-3 m-1">
+                <button (click)="prevPage()" class="bg-[#D3D3D3] h-[50px] w-[80px] rounded-full">
+                    <mat-icon class="text-3xl ">
+                        navigate_before
+                    </mat-icon>
+                </button>
+                <p class="text-xl font-bold text-center">
+                    page:{{page}}
+                </p>
+                <button (click)="nextPage()" class=" bg-[#D3D3D3] h-[50px] w-[80px] rounded-full">
+                    <mat-icon class="text-3xl">
+                        navigate_next
+                    </mat-icon>
+                </button>
+    
+            </div>
+        </div>
+
     </div>
 
 </mat-drawer-container>
@@ -60,15 +90,15 @@
 <div *ngIf="platform=='desktop'">
     <mat-toolbar  class="toolbar relative z-50">
 
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a routerLink="/" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Home
         </a>
     
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a routerLink="/login" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Login
         </a>
     
-        <a href="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a routerLink="/signup" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Signup
         </a>
         
@@ -79,6 +109,15 @@
         <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Cart
         </a>
+
+        <span class="md:ml-[350px]" >
+            <mat-icon color="" class="text-[#D0D314] m-4 text-[40px] font-bold">
+                shoping_cart
+            </mat-icon>
+            <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
+                {{cart.cart.length}}
+            </span>
+        </span>
     
     </mat-toolbar>
     <div class="grid justify-center w-[100%]">
@@ -89,13 +128,19 @@
             Our best selling items
         </p>
         <div class="grid justify-center rounded-2xl bg-[#D3D3D3] popula p-1 md:p-7 border-3xl md:w-[1300px]">
-            <ul class="grid justify-center grid-cols-2 md:grid-cols-4" >
+            <ul *ngIf="loading==false" class="grid justify-center grid-cols-2 md:grid-cols-4" >
                 <li *ngFor="let sneaks of sneakers">
                     <app-sneaks-card [data]="sneaks">
     
                     </app-sneaks-card>
                 </li>
             </ul>
+
+            <div *ngIf="loading==true" class="grid justify-center">
+                <mat-spinner diameter="50" color="#D0D314" class="text-#D0D314" >
+    
+                </mat-spinner>
+            </div>
            
         </div>
     

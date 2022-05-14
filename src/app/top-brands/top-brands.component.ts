@@ -29,7 +29,7 @@ export class TopBrandsComponent implements OnInit {
       url:'../../assets/images/Puma.png',
     },
     {
-      name:'Addidas',
+      name:'Adidas',
       url:    '../../assets/images/Adidas.png',
     },
     {

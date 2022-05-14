@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SneaksService } from '../sneaks.service';
 import { Observable, of } from 'rxjs';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-intro',
@@ -12,7 +13,7 @@ export class IntroComponent implements OnInit {
   handleClick():void{
     console.log('that ne clisked')
   }
-  constructor(private sneakers:SneaksService) { }
+  constructor(private sneakers:SneaksService,public cart:CartService) { }
 
   sneaks=[]
   

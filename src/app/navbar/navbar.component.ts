@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faker } from '@faker-js/faker';
+import { CartService } from '../cart.service';
 // import SneakersApi from 'sneaks-api'
 
 @Component({
@@ -10,7 +11,9 @@ import { faker } from '@faker-js/faker';
 
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public cart:CartService
+  ) { }
 
   ngOnInit(): void {
     let width=window.innerWidth

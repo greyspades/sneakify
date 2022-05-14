@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-sneaks-card',
@@ -9,7 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class SneaksCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public cart:CartService
+  ) { }
   
   @Input() data!:any;
 

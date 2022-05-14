@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SneaksService } from '../sneaks.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-brand',
@@ -13,7 +14,8 @@ export class BrandComponent implements OnInit {
   constructor(
     private service:SneaksService,
     private route:ActivatedRoute,
-    private location:Location
+    private location:Location,
+    public cart:CartService,
   ) { }
 
   platform?:string
@@ -33,9 +35,13 @@ export class BrandComponent implements OnInit {
 
     const id = this.route.snapshot.paramMap.get('id');
     this.brand=id
+
+    
     
     this.getBrand(id!,this.page)
   }
+
+  loading?:boolean
 
   page:number=1
 
@@ -52,9 +58,11 @@ export class BrandComponent implements OnInit {
   }
 
   getBrand(id:string,page:number):void{
+    this.loading=true
     this.service.getBrand(id!,page!)
     .subscribe((res)=>{
       console.log(res)
+      this.loading=false
       this.sneakers=res.results
     })
   }

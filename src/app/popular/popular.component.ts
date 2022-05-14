@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 import { SneaksService } from '../sneaks.service';
 
 @Component({
@@ -8,12 +9,19 @@ import { SneaksService } from '../sneaks.service';
 })
 export class PopularComponent implements OnInit {
 
-  constructor(private sneaks:SneaksService) { }
+  constructor(
+    private sneaks:SneaksService,
+    private cart:CartService
+    ) { }
 
   sneakers=<any>[]
 
   logData():void{
     console.log(this.sneakers)
+  }
+
+  addToCart(item:any):void{
+    this.cart.add(item)
   }
 
   getSneakers():void {

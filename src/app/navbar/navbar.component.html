@@ -39,12 +39,22 @@
         
     
         <mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
-            <div *ngIf="platform=='mobile'" class="grid justify-end shadow-2xl">
-                <button class="mr-6" (click)="this.toggleDrawer()">
-                    <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
-                        menu
+            <div *ngIf="platform=='mobile'" class="grid grid-cols-2 justify-end shadow-2xl">
+                <span class="md:ml-[350px]" >
+                    <mat-icon color="" class="text-[#D0D314] m-4 text-[40px] font-bold">
+                        shoping_cart
                     </mat-icon>
-                </button>
+                    <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
+                        {{cart.cart.length}}
+                    </span>
+                </span>
+                <div class="grid justify-end">
+                    <button class="mr-6" (click)="this.toggleDrawer()">
+                        <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
+                            menu
+                        </mat-icon>
+                    </button>
+                </div>
             </div>
             <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
                 <div class="grid m-6">
