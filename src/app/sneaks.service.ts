@@ -33,7 +33,7 @@ export class SneaksService {
 
   addUser(data:any):Observable<any>{
     // console.log(data)
-    return this.http.post<any>('http://localhost:8000/sneaks/add_user/',data)
+    return this.http.post<any>('https://sneakify.herokuapp.com/sneaks/add_user/',data)
     .pipe(
        tap((res)=>this.signupResponse=res.message),
       catchError(this.handleError<any>('getSneakers', []))
@@ -41,7 +41,7 @@ export class SneaksService {
   }
 
   login(data:any):Observable<any>{
-    return this.http.post<any>('http://localhost:8000/sneaks/login/',data)
+    return this.http.post<any>('https://sneakify.herokuapp.com/sneaks/login/',data)
     .pipe(
        tap((res)=>this.signupResponse=res.message),
       catchError(this.handleError<any>('getSneakers', []))
@@ -50,7 +50,7 @@ export class SneaksService {
 
   getBrand(brand:string,page:number):Observable<any>{
 
-    return this.http.get(`http://localhost:8000/sneaks/sneaker_brand/${brand}/${page}`)
+    return this.http.get(`https://sneakify.herokuapp.com/sneaks/sneaker_brand/${brand}/${page}`)
     .pipe(
       catchError(this.handleError<any>('getSneakers', []))
     )
@@ -61,7 +61,7 @@ export class SneaksService {
   getSneakers():Observable<any>{
 
   
-    return this.http.get<any>('http://localhost:8000/sneaks/get_sneakers/')
+    return this.http.get<any>('https://sneakify.herokuapp.com/sneaks/get_sneakers/')
     .pipe(
       //tap((data)=>console.log(data)),
       catchError(this.handleError<any>('getSneakers', []))
