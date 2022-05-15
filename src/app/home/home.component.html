@@ -2,7 +2,7 @@
 <!-- <app-appbar></app-appbar> -->
 <!-- <app-navbar></app-navbar>
 
-<app-top-brands></app-top-brands>
+
 
 <app-popular></app-popular> -->
 
@@ -39,7 +39,7 @@
                 shoping_cart
             </mat-icon>
             <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                {{cart.cart.length}}
+                {{cart.cart.length?cart.cart.length:''}}
             </span>
         </span>
     
@@ -65,6 +65,7 @@
 
 
 </div>
+<app-top-brands></app-top-brands>
 
 
 

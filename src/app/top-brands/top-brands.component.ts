@@ -20,7 +20,7 @@ export class TopBrandsComponent implements OnInit {
       this.columns="12"
     }
   }
-
+  
   columns?:string
   
   brands:Brands[]=[
