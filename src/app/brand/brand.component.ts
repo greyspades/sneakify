@@ -63,7 +63,7 @@ export class BrandComponent implements OnInit {
     .subscribe((res)=>{
       console.log(res)
       this.loading=false
-      this.sneakers=res.results
+      this.sneakers.push(res.results)
     })
   }
 
