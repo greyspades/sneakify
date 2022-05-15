@@ -1,71 +1,13 @@
 <!-- <app-intro></app-intro> -->
 <!-- <app-appbar></app-appbar> -->
-<!-- <app-navbar></app-navbar>
-
-
-
-<app-popular></app-popular> -->
-
-
-
-<div class="intro md:h-[600px] h-[500px]">
-    <!-- <div>
-        <app-navbar></app-navbar>
-    </div> -->
-  <mat-toolbar *ngIf="this?.platform=='desktop'" class="toolbar relative z-50">
-
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-            Home
-        </a>
-    
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-            Login
-        </a>
-
-        <a href="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-            Signup
-        </a>
-        
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-            Popular
-        </a>
-
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
-            Cart
-        </a>
-
-        <span class="md:ml-[350px]" >
-            <mat-icon color="" class="text-[#D0D314] text-[40px] font-bold">
-                shoping_cart
-            </mat-icon>
-            <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                {{this?.cart?.cart}}
-            </span>
-        </span>
-    
-  </mat-toolbar>
-
-<div class="md:grid grid-rows-4 md:grid-cols-3 md:h-[500px] z-0 relative md:mt-[-10px] md:p-6">
-    
-    <div class="md:text-[170px] text-[40px] ml-3 sm:text-center  text-[#D3D3D3] font-extrabold">
-        Sneakify
-      </div>
-
-      <div class="grid mt-[-70px] md:col-span-2 md:mt-[-160px] md:mr-[-100px] relative z-0">
-        <img src="/assets/images/shoe2.png" >
-    </div>
-
-    <div class="md:mt-[150px] md:ml-[150px] md:relative md:mb-0 mb-[-150px] grid justify-center ">
-        <button class="w-[150px] h-[80px] bg-[#D3D3D3] rounded-full" (click)="logData()">
-            Shop now
-        </button>
-    </div>
-</div>
-
-
-
-</div>
+<app-navbar></app-navbar>
 <app-top-brands></app-top-brands>
+<app-popular></app-popular>
+
+
+
+
+
 
 
 

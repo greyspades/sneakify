@@ -1,6 +1,6 @@
 <div class="grid shadow-2xl grid-rows-2 bg-[#0C0F25] md:h-[316px] md:rounded-3xl rounded-md md:m-[30px]  md:w-[250px] h-[240px] m-1 ">
     <div>
-        <img class="md:rounded-t-3xl rounded-md border-2 border-[#0C0F25]" src={{data.media.thumbUrl}} >
+        <img class="md:rounded-t-3xl rounded-md border-2 border-[#0C0F25]" src={{data.media.smallImageUrl}} >
     </div>
     <div class="grid grid-rows-4 md:p-4 p-2 md:mt-2 relative"> 
         <div class="truncate ...">
@@ -8,7 +8,7 @@
                 Name:
             </span>
             <span class="text-white text-clip overflow-hidden ...">
-                {{data.name}}
+                {{data?.name}}
             </span>
         </div>
         <mat-divider class="bg-[#D0D314] h-0.5 rounded-full "></mat-divider>
@@ -31,11 +31,11 @@
                 $
             </span>
             <span class="font-bold">
-                {{data.retailPrice}}
+                {{data?.retailPrice}}
             </span>
         </span>
 
-        <button (click)="cart.add(data)" class="md:h-[35px] md:w-[70px] w-[50px] h-[30px] rounded-xl md:ml-auto bg-[#D3D3D3] absolute md:right-3 right-1 bottom-4 md:bottom-3">
+        <button (click)="this.cart.add(data)" class="md:h-[35px] md:w-[70px] w-[50px] h-[30px] rounded-xl md:ml-auto bg-[#D3D3D3] absolute md:right-3 right-1 bottom-4 md:bottom-3">
             <mat-icon class="text-black text-center" color="#D0D314" >add_shopping_cart</mat-icon>
         </button>
         

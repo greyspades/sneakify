@@ -4,21 +4,21 @@
     <!-- <div>
         <app-navbar></app-navbar>
     </div> -->
-  <mat-toolbar *ngIf="platform=='desktop'" class="toolbar relative z-50">
+  <mat-toolbar *ngIf="this?.platform=='desktop'" class="toolbar relative z-50">
 
         <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Home
         </a>
     
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a routerLink="/login" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Login
         </a>
 
-        <a href="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a routerLink="/signup" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Signup
         </a>
         
-        <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
+        <a href="/" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Popular
         </a>
 
@@ -31,7 +31,7 @@
                 shoping_cart
             </mat-icon>
             <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                {{cart.cart.length}}
+                {{this?.cart?.cart.length}}
             </span>
         </span>
     
@@ -44,11 +44,12 @@
       </div>
 
       <div class="grid mt-[-70px] md:col-span-2 md:mt-[-160px] md:mr-[-100px] relative z-0">
-        <img src="/assets/images/shoe2.png" >
+        <img *ngIf="this?.platform=='desktop'" src="/assets/images/shoe2.png" >
+        <img *ngIf="this?.platform=='mobile'" src="/assets/images/shoe4.png" >
     </div>
 
     <div class="md:mt-[150px] md:ml-[150px] md:relative md:mb-0 mb-[-150px] grid justify-center ">
-        <button class="w-[150px] h-[80px] bg-[#D3D3D3] rounded-full" (click)="logData()">
+        <button class="w-[150px] h-[80px] bg-[#D3D3D3] rounded-full" (click)="this?.logData()">
             Shop now
         </button>
     </div>
