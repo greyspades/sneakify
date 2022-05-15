@@ -51,7 +51,7 @@ export class BrandComponent implements OnInit {
       this.getBrand(this.brand,this.page)
     }
   }
-
+  title:string='ludex gundyr'
   nextPage():void{
     this.page+=1
     this.getBrand(this.brand,this.page)
