@@ -38,32 +38,32 @@
         </div> -->
         
     
-        <mat-drawer-container *ngIf="platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
+        <mat-drawer-container *ngIf="this?.platform=='mobile'" autosize="true" autosize="true" class="drawer-container bg-[#0C0F25]">
             <div *ngIf="platform=='mobile'" class="grid grid-cols-2 justify-end shadow-2xl">
                 <span class="md:ml-[350px]" >
                     <mat-icon color="" class="text-[#D0D314] m-4 text-[40px] font-bold">
                         shoping_cart
                     </mat-icon>
                     <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                        {{cart.cart.length}}
+                        {{this?.cart?.cart.length}}
                     </span>
                 </span>
                 <div class="grid justify-end">
-                    <button class="mr-6" (click)="this.toggleDrawer()">
+                    <button class="mr-6" (click)="this?.toggleDrawer()">
                         <mat-icon class="text-white text-3xl w-[10px] h-[10px]">
                             menu
                         </mat-icon>
                     </button>
                 </div>
             </div>
-            <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{drawerOpened}}>
+            <mat-drawer class="drawer-content bg-[#D3D3D3] " mode="side" opened={{this?.drawerOpened}}>
                 <div class="grid m-6">
-                    <a routerLink="" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                    <a routerLink="/" href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
                         Home
                     </a>
                 </div>
                 <div class="grid m-6">
-                    <a href="#" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
+                    <a href="/" class="text-white md:h-[30px] md:w-[70px] w-[120px] h-[40px] text-center rounded-full hover:bg-[#D0D314] bg-[#0C0F25]">
                         Popular
                     </a>
                 </div>
@@ -89,7 +89,7 @@
     
         </mat-drawer-container>
     </div>
-    <div *ngIf="platform=='desktop'" class=" relative">
+    <div *ngIf="this?.platform=='desktop'" class=" relative">
         <app-intro></app-intro>
     </div>
 </div>
