@@ -27,7 +27,7 @@ export class PopularComponent implements OnInit {
   getSneakers():void {
     this.sneaks.getSneakers()
     .subscribe((data)=>{
-      //console.log(data)
+      console.log('gotten sneaker data')
       this.sneakers=data.results
     })
   }

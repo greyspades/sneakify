@@ -26,51 +26,51 @@ export class TopBrandsComponent implements OnInit {
   brands:Brands[]=[
     {
       name:'Puma',
-      url:'../../assets/images/Puma.png',
+      url:'/assets/images/Puma.png',
     },
     {
       name:'Adidas',
-      url:    '../../assets/images/Adidas.png',
+      url:    '/assets/images/Adidas.png',
     },
     {
       name:'Asics',
-      url:'../../assets/images/Asics.png',
+      url:'/assets/images/Asics.png',
     },
     {
       name:'Nike',
-      url:'../../assets/images/Nike.png',
+      url:'/assets/images/Nike.png',
     },
     {
       name:'Converse',
-      url:'../../assets/images/Converse.png',
+      url:'/assets/images/Converse.png',
     },
     {
       name:'FILA',
-      url:'../../assets/images/FILA.png',
+      url:'/assets/images/FILA.png',
     },
     {
       name:'Jordan',
-      url:    '../../assets/images/Jordan.png',
+      url:    '/assets/images/Jordan.png',
     },
     {
       name:'Reebok',
-      url:    '../../assets/images/Reebok.png',
+      url:    '/assets/images/Reebok.png',
     },
     {
       name:'Brooks',
-      url:'../../assets/images/Brooks.png',
+      url:'/assets/images/Brooks.png',
     },
     {
       name:'Vans',
-      url:'../../assets/images/Vans.png',
+      url:'/assets/images/Vans.png',
     },
     {
       name:'Wilson',
-      url:'../../assets/images/Wilson.png',
+      url:'/assets/images/Wilson.png',
     },
     {
       name:'Kappa',
-      url:'../../assets/images/Kappa.png',
+      url:'/assets/images/Kappa.png',
     },
     // {
     //   name:'New-Balance',
