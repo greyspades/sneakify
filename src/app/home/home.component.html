@@ -12,7 +12,7 @@
     <!-- <div>
         <app-navbar></app-navbar>
     </div> -->
-  <mat-toolbar *ngIf="platform=='desktop'" class="toolbar relative z-50">
+  <mat-toolbar *ngIf="this?.platform=='desktop'" class="toolbar relative z-50">
 
         <a href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
             Home
@@ -39,7 +39,7 @@
                 shoping_cart
             </mat-icon>
             <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                {{cart.cart.length?cart.cart.length:''}}
+                {{this?.cart?.cart}}
             </span>
         </span>
     

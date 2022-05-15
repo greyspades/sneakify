@@ -41,7 +41,7 @@ export class BrandComponent implements OnInit {
     this.getBrand(id!,this.page)
   }
 
-  loading?:boolean
+  loading:boolean=false
 
   page:number=1
 
@@ -63,7 +63,7 @@ export class BrandComponent implements OnInit {
     .subscribe((res)=>{
       console.log(res)
       this.loading=false
-      this.sneakers.push(res.results)
+      this.sneakers=res.results
     })
   }
 

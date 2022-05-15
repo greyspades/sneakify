@@ -5,16 +5,14 @@
         <p class="text-xl font-medium text-center mb-4 text-white">
             Our top brands
         </p>
-        <button ondblclick="">
 
-        </button>
 
     <div class=" md:mt-[40px] w-[350px] h-[200px] md:w-[1200px]">
-        <mat-grid-list class="" cols={{columns}}   >
-            <mat-grid-tile class="h-[80px] w-[80px]" *ngFor="let brand of brands">
+        <mat-grid-list class="" cols={{this?.columns}} >
+            <mat-grid-tile class="h-[80px] w-[80px]" *ngFor="let brand of this?.brands">
                 
-                   <a href="#" routerLink="/brand/{{brand.name}}"  class="w-[70px] h-[70px]">
-                    <img class="h-[80px] w-[80px] rounded-md" src={{brand.url}}  >
+                   <a href="#" routerLink="/brand/{{brand?.name}}"  class="w-[70px] h-[70px]">
+                    <img class="h-[80px] w-[80px] rounded-md" src={{brand?.url}}  >
                    </a>
         
             </mat-grid-tile>

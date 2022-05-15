@@ -8,7 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class CartService {
 
-  cart=JSON.parse(localStorage.getItem('cart3')!)
+  cart=JSON.parse(localStorage.getItem('cart3')!) || []
 
   getCart(){
     var it:any=localStorage.getItem('cart')

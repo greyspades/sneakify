@@ -87,7 +87,7 @@
 
 </mat-drawer-container>
 
-<div *ngIf="platform=='desktop'">
+<div>
     <mat-toolbar  class="toolbar relative z-50">
 
         <a routerLink="/" href="#" class="h-[30px] ml-[100px] w-[70px] text-center rounded-full hover:bg-[#D0D314] bg-[#D3D3D3]">
@@ -115,28 +115,29 @@
                 shoping_cart
             </mat-icon>
             <span class="w-[40px] h-[40px] text-[#D3D3D3] text-3xl font-bold rounded-full text-center">
-                {{cart.cart.length}}
+                {{this?.cart?.cart}}
             </span>
         </span>
     
     </mat-toolbar>
+
     <div class="grid justify-center w-[100%]">
         <h3 class="text-3xl font-bold text-center mt-[40px] mb-1 text-white">
-            Top {{brand | async}}`s
+            Top {{this?.brand}}`s
         </h3>
         <p class="text-xl font-medium text-center mb-4 text-white">
             Our best selling items
         </p>
         <div class="grid justify-center rounded-2xl bg-[#D3D3D3] popula p-1 md:p-7 border-3xl md:w-[1300px]">
-            <ul *ngIf="loading==false" class="grid justify-center grid-cols-2 md:grid-cols-4" >
-                <li *ngFor="let sneaks of sneakers">
+            <ul *ngIf="this?.loading==false" class="grid justify-center grid-cols-2 md:grid-cols-4" >
+                <li *ngFor="let sneaks of this?.sneakers">
                     <app-sneaks-card [data]="sneaks">
     
                     </app-sneaks-card>
                 </li>
             </ul>
 
-            <div *ngIf="loading==true" class="grid justify-center">
+            <div *ngIf="this?.loading==true" class="grid justify-center">
                 <mat-spinner diameter="50" color="#D0D314" class="text-#D0D314" >
     
                 </mat-spinner>
@@ -154,7 +155,7 @@
                 </mat-icon>
             </button>
             <p class="text-xl font-bold text-center">
-                page:{{page}}
+                page:{{page?page:''}}
             </p>
             <button (click)="nextPage()" class=" bg-[#D3D3D3] h-[50px] w-[80px] rounded-full">
                 <mat-icon class="text-3xl">
@@ -169,9 +170,9 @@
 </div>
 
 <h3 class="text-3xl font-bold text-center mt-[40px] mb-1 text-white">
-    Top {{brand?brand:''}}`s
+    Top {{this?.brand}}`s
 </h3>
 
 <div class="text-3xl font-bold text-white">
-    {{title}}
+    {{this?.title}}
 </div>
