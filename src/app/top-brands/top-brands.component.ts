@@ -20,7 +20,7 @@ export class TopBrandsComponent implements OnInit {
       this.columns="12"
     }
   }
-  
+
   columns?:string
   
   brands:Brands[]=[
@@ -45,8 +45,8 @@ export class TopBrandsComponent implements OnInit {
       url:'/assets/images/Converse.png',
     },
     {
-      name:'FILA',
-      url:'/assets/images/FILA.png',
+      name:'Dior',
+      url:'/assets/images/dior.png',
     },
     {
       name:'Jordan',
@@ -57,8 +57,8 @@ export class TopBrandsComponent implements OnInit {
       url:    '/assets/images/Reebok.png',
     },
     {
-      name:'Brooks',
-      url:'/assets/images/Brooks.png',
+      name:'Chanel',
+      url:'/assets/images/chanel.png',
     },
     {
       name:'Vans',
@@ -68,14 +68,14 @@ export class TopBrandsComponent implements OnInit {
       name:'Wilson',
       url:'/assets/images/Wilson.png',
     },
-    {
-      name:'Kappa',
-      url:'/assets/images/Kappa.png',
-    },
     // {
-    //   name:'New-Balance',
-    //   url:'../../assets/images/New-Balance.png',
+    //   name:'Kappa',
+    //   url:'/assets/images/Kappa.png',
     // },
+    {
+      name:'New-Balance',
+      url:'../../assets/images/New-Balance.png',
+    },
     // {
     //   name:'Timberland',
     //   url:'../../assets/images/Timberland.png',
